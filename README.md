@@ -15,7 +15,7 @@ Loan Optimizer is a web-based financial application that optimizes loan allocati
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/loan-optimizer.git
+   git clone https://github.com/ricebiceps/loan-optimizer.git
    cd loan-optimizer
     ```
 
