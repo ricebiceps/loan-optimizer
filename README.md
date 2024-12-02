@@ -21,13 +21,13 @@ Loan Optimizer is a web-based financial application that optimizes loan allocati
 
 2. Create a virtual environment:
     ```bash
-        python -m venv loan-optimizer-env
-        source loan-optimizer-env/bin/activate  # On Windows: loan-optimizer-env\Scripts\activate
+    python -m venv loan-optimizer-env
+    source loan-optimizer-env/bin/activate  # On Windows: loan-optimizer-env\Scripts\activate
     ```
 
 3. Install dependencies:
     ```bash
-        pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 
 4. Obtain Gurobi License: 
@@ -35,9 +35,9 @@ Loan Optimizer is a web-based financial application that optimizes loan allocati
 
 ## Usage 
 1. Run the application 
-```bash
+    ```bash
     python app/app.py
-```
+    ```
 2. Open the app in your browser
 3. Upload your CSV files, according to instruction
 4. View Metrics and visualizations:
