@@ -2,7 +2,7 @@ from typing import List, Dict, Any, Tuple
 import pandas as pd
 from dataclasses import dataclass
 from gurobipy import Model, GRB, quicksum
-from backend.models import Loan, Facility, AssetCovenant, PoolCovenant
+from backend.models import Loan, Facility
 from backend.existing_loans_handle import load_existing_loans, update_existing_loans_csv
 
 def create_base_model(

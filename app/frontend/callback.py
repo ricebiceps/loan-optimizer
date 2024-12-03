@@ -2,7 +2,7 @@ import os
 import base64
 import numpy as np
 import pandas as pd
-from dash import Input, Output, State, ctx, no_update, Dash, html, dcc
+from dash import Input, Output, no_update, Dash, dcc
 import dash_bootstrap_components as dbc
 from backend.facility_creation import create_facilities_from_config
 from backend.optimization import run_optimization_process

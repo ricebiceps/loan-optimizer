@@ -1,4 +1,3 @@
-import os
 import pandas as pd
 from backend.models import Loan
 
