@@ -2,13 +2,13 @@ from dash import Dash, Input, Output, dcc, html, State
 import dash_bootstrap_components as dbc
 from authentication import login_page
 from dashboard import dashboard_page
+from frontend.callback import register_callbacks
 
 # Initialize the Dash app
 app = Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.DARKLY])
 app.title = "Loan Allocation Optimizer"
 
-# Define app layout
-app.layout = html.Div(id="page-content")
+register_callbacks(app)
 
 # Initial route: login page
 app.layout = html.Div([
@@ -23,8 +23,6 @@ app.layout = html.Div([
 )
 def display_page(pathname):
     if pathname == "/dashboard":
-        from frontend.callback import register_callbacks
-        register_callbacks(app)  # This ensures the callbacks are loaded
         return dashboard_page()
     else:  # Default to login
         return login_page()

@@ -1,0 +1,4 @@
+Order,Type,Input
+1,Max,orig_amt
+2,Min,CSCORE_B
+3,Min,facility_cost

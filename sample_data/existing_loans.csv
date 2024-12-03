@@ -1,0 +1,2 @@
+facility_id,LOAN_ID,ORIG_CHN,SELLER,orig_rt,orig_amt,orig_trm,orig_date,first_pay,oltv,ocltv,num_bo,dti,CSCORE_B,CSCORE_C,FTHB_FLG,purpose,PROP_TYP,NUM_UNIT,occ_stat,state,zip_3,mi_pct,prod_type,MI_TYPE,relo_flg
+

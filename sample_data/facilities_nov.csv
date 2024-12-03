@@ -1,0 +1,16 @@
+﻿Command,Number,Cost,constr_prop,constr_op,constr_val,crit_prop,crit_op,crit_val,a,b,c,constr_type,constr_op.1,facility_space
+facility0.add_asset_covenants,0,154351,orig_rt,>=,6,,,,,,,,,
+facility0.add_pool_covenants,0,154351,,,,,,,random_df['CSCORE_B'].to_list(),((random_df['state']=='CA')*(random_df['orig_amt'])).to_list(),600,0,1,4377852
+facility0.add_pool_covenants,0,154351,,,,,,,[1]*len(random_df),random_df['orig_amt'].to_list(),4377852,1,0,4377852
+facility1.add_asset_covenants,1,56469,oltv,<=,79,,,,,,,,,
+facility1.add_pool_covenants,1,56469,,,,,,,random_df['CSCORE_B'].to_list(),((random_df['state']=='CA')*(random_df['orig_amt'])).to_list(),650,0,1,6254114
+facility1.add_pool_covenants,1,56469,,,,,,,[1]*len(random_df),random_df['orig_amt'].to_list(),6254114,1,0,6254114
+facility2.add_asset_covenants,2,158483,orig_rt,>=,7,,,,,,,,,
+facility2.add_pool_covenants,2,158483,,,,,,,random_df['CSCORE_B'].to_list(),((random_df['state']=='CA')*(random_df['orig_amt'])).to_list(),700,0,1,3606484
+facility2.add_pool_covenants,2,158483,,,,,,,[1]*len(random_df),random_df['orig_amt'].to_list(),3606484,1,0,3606484
+facility3.add_asset_covenants,3,61341,oltv,<=,77,,,,,,,,,
+facility3.add_pool_covenants,3,61341,,,,,,,random_df['CSCORE_B'].to_list(),((random_df['state']=='CA')*(random_df['orig_amt'])).to_list(),750,0,1,1628753
+facility3.add_pool_covenants,3,61341,,,,,,,[1]*len(random_df),random_df['orig_amt'].to_list(),1628753,1,0,1628753
+facility4.add_asset_covenants,4,47937,orig_rt,>=,8,,,,,,,,,
+facility4.add_pool_covenants,4,47937,,,,,,,random_df['CSCORE_B'].to_list(),((random_df['state']=='CA')*(random_df['orig_amt'])).to_list(),800,0,1,9685696
+facility4.add_pool_covenants,4,47937,,,,,,,[1]*len(random_df),random_df['orig_amt'].to_list(),9685696,1,0,9685696
