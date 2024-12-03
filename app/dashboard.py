@@ -1,6 +1,7 @@
 from dash import html, dcc, dash_table
 import dash_bootstrap_components as dbc
 
+# Define the dashboard layout
 def dashboard_page():
     return dbc.Container([
         dbc.Row([

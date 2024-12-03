@@ -1,3 +1,5 @@
+# Description: This file contains the classes for the Facility, Loan, AssetCovenant, and PoolCovenant objects.
+
 class Loan:
     def __init__(self, LOAN_ID, ORIG_CHN, SELLER, orig_rt, orig_amt, orig_trm,
                  orig_date, first_pay, oltv, ocltv, num_bo, dti, CSCORE_B,

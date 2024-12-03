@@ -1,6 +1,7 @@
 from dash import html
 import dash_bootstrap_components as dbc
 
+# Define the login page layout
 def login_page():
     return dbc.Container([
         dbc.Row(
