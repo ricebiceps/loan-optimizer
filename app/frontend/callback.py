@@ -114,9 +114,9 @@ def pool_constraint_visualization():
 
     # Update layout
     fig.update_layout(
-        title="Limit and Actual",
+        title="Avg Credit Score of Loans from California vs. Facility Limit",
         barmode='overlay',
-        xaxis_title="Value",
+        xaxis_title="Credit Score",
         yaxis_title="Facility",
         legend_title="Legend",
         template="plotly_dark"
