@@ -75,6 +75,54 @@ def generate_visualizations(facility_metrics):
     )
 
     return fig1, fig2
+def pool_constraint_visualization():
+
+    # Sample data
+    data = [
+    (797.0, 600),
+    (757.5, 650),
+    (0, 700),
+    (787.0, 750),
+    (0, 800),
+    (0, 700),
+    (0, 750),
+    (0, 800)
+    ]
+    
+    # Separate the data into Actual and Limit
+    actual_scores = [item[0] for item in data]
+    limits = [item[1] for item in data]
+    facilities = [f"Facility {i}" for i in range(len(data))]
+
+    # Create a Plotly bar chart
+    fig = go.Figure()
+
+    fig.add_trace(go.Bar(
+        y=facilities,
+        x=actual_scores,
+        name="Actual",
+        orientation='h',
+        marker=dict(color="red")
+    ))
+    fig.add_trace(go.Bar(
+        y=facilities,
+        x=limits,
+        name="Limit",
+        orientation='h',
+        marker=dict(color="blue")
+    ))
+
+    # Update layout
+    fig.update_layout(
+        title="Limit and Actual",
+        barmode='overlay',
+        xaxis_title="Value",
+        yaxis_title="Facility",
+        legend_title="Legend",
+        template="plotly_dark"
+    )
+
+    return fig
 
 def register_callbacks(app: Dash):
     global combined_df
@@ -95,7 +143,8 @@ def register_callbacks(app: Dash):
          Output("total-new-loans", "children"),
          Output("average-credit-score", "children"),
          Output("visualization-1", "figure"),
-         Output("visualization-2", "figure")
+         Output("visualization-2", "figure"),
+         Output("visualization-3", "figure")
          ],
         [Input("upload-loan", "contents"),
          Input("upload-loan", "filename"),
@@ -110,7 +159,7 @@ def register_callbacks(app: Dash):
     def handle_upload(loan_content, loan_name, facility_content, facility_name, order_content, order_name, existing_loan_content, existing_loan_name):
         # If not all files are uploaded, return empty DataTable
         if not loan_content or not facility_content or not order_content or not existing_loan_content:
-            return no_update, no_update, "Please upload all four files.", True, "warning", "", "", "", "", "", "", go.Figure(), go.Figure()
+            return no_update, no_update, "Please upload all four files.", True, "warning", "", "", "", "", "", "", go.Figure(), go.Figure(), go.Figure()
         spinner = dbc.Spinner(size="lg", color="primary")
 
         try:
@@ -208,13 +257,14 @@ def register_callbacks(app: Dash):
 
             facility_metrics = pd.DataFrame(facility_data)  # Replace with actual facility data generation logic
             fig1, fig2 = generate_visualizations(facility_metrics)
+            fig3 = pool_constraint_visualization()
 
-            return table_data, table_columns, "Files processed successfully!", True, "success", "", total_loans, total_facilities, f"${total_value_assigned}", total_new_loans, f"{average_credit_score:.2f}", fig1, fig2
+            return table_data, table_columns, "Files processed successfully!", True, "success", "", total_loans, total_facilities, f"${total_value_assigned}", total_new_loans, f"{average_credit_score:.2f}", fig1, fig2, fig3
 
         except Exception as e:
             # Log the error and return an empty table
             print(f"An error occurred: {e}")
-            return no_update, no_update, f"An error occurred: {str(e)}", True, "danger", "","", "", "$0", "", "", go.Figure(), go.Figure()
+            return no_update, no_update, f"An error occurred: {str(e)}", True, "danger", "","", "", "$0", "", "", go.Figure(), go.Figure(), go.Figure()
     @app.callback(
         Output("download-csv", "data"),
         Input("download-button", "n_clicks"),

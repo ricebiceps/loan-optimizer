@@ -150,6 +150,14 @@ def dashboard_page():
                 html.Div(style={"height": "100px"}),  # Dummy element to extend page height
             )
         ),
+    dbc.Row([
+        dbc.Col(
+            dcc.Graph(
+                id='visualization-3',  # Placeholder for pie chart
+            ),
+            width=12  # Full width for the chart
+        )
+    ]),
         dbc.Row([
             dbc.Col([
                 dbc.Button("Download Allocation Data", id="download-button", color="primary", className="mt-4"),
