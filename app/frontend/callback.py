@@ -114,9 +114,9 @@ def pool_constraint_visualization():
 
     # Update layout
     fig.update_layout(
-        title="Avg Credit Score of Loans from California vs. Facility Limit",
+        title="Actual Weighted Average Credit Score of Loans from CA vs Facility-specific limits of Weighted Average Credit Score of Loans from CA",
         barmode='overlay',
-        xaxis_title="Credit Score",
+        xaxis_title="Weighted Average Credit Score",
         yaxis_title="Facility",
         legend_title="Legend",
         template="plotly_dark"
